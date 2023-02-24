@@ -1,35 +1,29 @@
 import './App.css';
 import { Provider } from "react-redux";
-import { Card, LOGOS } from './components/Card';
 import store from './store';
-
-function getRandomIndex(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
-}
+import { CardTable } from './components/Card/CardTable';
+import { CardModel } from './models/CardModel';
+import { getRandomIndex } from './utils';
+import { LOGOS } from './components/Card';
 
 function App() {
+
   const cards = [];
   const totalCards = 18;
 
   for(let i=0; i < totalCards; i++){
-    const randomIndex = getRandomIndex(0,LOGOS.length-1);
-    cards.push(randomIndex);
-    while( cards.filter((c)=> c === randomIndex).length > 4){
-      cards[i]=getRandomIndex(0,LOGOS.length-1);
+    const imageIndex = getRandomIndex(0,LOGOS.length-1);
+    cards.push(new CardModel({imageIndex, position: i }));
+    while( cards.filter((c)=> c.imageIndex === imageIndex).length > 4){
+      cards[i].imageIndex =getRandomIndex(0,LOGOS.length-1);
     }
   }
 
   return (
     <Provider store={store}>
-
     <div className="App">
       <header className="App-header">
-       <div> Memories Game </div>
-       <div className='card-wrapper'>
-        {cards.map((c, i)=><Card key={i} index={c}></Card>)}
-       </div>
+       <CardTable data={cards}></CardTable>
       </header>
     </div>
     </Provider>
