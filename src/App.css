@@ -3,20 +3,25 @@ body{
   color: aliceblue;
 }
 .card-item{
-  width: 128px;
-  height: 200px;
+  height: 256px;
   background-color: rgb(193, 190, 190);
-  display: inline-block;
   margin: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 0px 3px 0px #4d4c4c;
+  padding: 15px;
 }
 .card-item-active{
-  width: 128px;
-  height: 200px;
+  padding: 15px;
+  height: 256px;
   background-color: rgb(191, 204, 238);
-  display: inline-block;
   margin: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 0px 3px 0px #4d4c4c;
 }
 
 .card-wrapper{
-  width: 1000px;
+  background-color: rgb(5, 142, 227);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
