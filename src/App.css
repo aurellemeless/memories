@@ -17,6 +17,14 @@ body{
   margin: 10px;
   border-radius: 6px;
   box-shadow: 2px 0px 3px 0px #4d4c4c;
+  transform: rotateY(360deg);
+  transition: transform 0.8s;
+}
+.card-item-match{
+  height: 256px;
+  margin: 10px;
+  background-color: rgba(193, 190, 190, 0.522);
+  border-radius: 6px;
 }
 
 .card-wrapper{
