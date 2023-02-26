@@ -17,9 +17,10 @@ export const cardSlice = createSlice({
     enqueueCard(state, { payload: { imageIndex, position } }) {
       state.imagesStack = [imageIndex, ...state.imagesStack];
       state.positionStack = [position, ...state.positionStack];
-      const [current, prev] = state.imagesStack;
+      const [currentImage, prevImage] = state.imagesStack;
+      const [currentPosition, prevPosition] = state.positionStack;
       // check images matches
-      if (current === prev) {
+      if (currentImage === prevImage && currentPosition !== prevPosition) {
         state.countMatches = state.countMatches + 1;
         state.imagesStack = [];
         // all macthes cards positions
