@@ -4,7 +4,7 @@ body{
 }
 .card-item{
   height: 256px;
-  background-color: rgb(193, 190, 190);
+  background-color: #212121;
   margin: 10px;
   border-radius: 6px;
   box-shadow: 2px 0px 3px 0px #4d4c4c;

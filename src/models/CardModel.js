@@ -1,12 +1,13 @@
 
 export class CardModel{
-    flipped = true;
-    removed = true;
-    position = null;
+    matched;
+    position;
     imageIndex;
 
-    constructor({position, imageIndex=null}){
+    constructor({position=null, imageIndex=null, matched=false}){
         this.position = position;
         this.imageIndex = imageIndex;
+        this.matched = matched;
     }
+
 }
