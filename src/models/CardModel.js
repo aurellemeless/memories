@@ -1,12 +1,11 @@
+export class CardModel {
+	flipped = true;
+	removed = true;
+	position = null;
+	imageIndex;
 
-export class CardModel{
-    flipped = true;
-    removed = true;
-    position = null;
-    imageIndex;
-
-    constructor({position, imageIndex=null}){
-        this.position = position;
-        this.imageIndex = imageIndex;
-    }
+	constructor({ position, imageIndex = null }) {
+		this.position = position;
+		this.imageIndex = imageIndex;
+	}
 }
